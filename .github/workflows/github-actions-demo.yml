@@ -1,0 +1,29 @@
+name: Teste de Software
+run-name: ${{ github.actor }} está executando a pipeline de teste
+
+on: [push]
+
+jobs:
+  Testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurar repositório
+        uses: actions/checkout@v2
+
+      - name: Verificar versão do Python
+        run: python --version
+
+      - name: Executar teste do componente
+        run: python Teste_componente/componente.py
+
+      - name: Executar teste do componente
+        run: python Teste_integracao/integracao.py
+
+        
+      - name: Executar teste do componente
+        run: python Teste_componente/componente2.py
+
+      - name: Executar teste do componente
+        run: python Teste_integracao/integracao2.py
+
+
